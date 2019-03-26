@@ -6,13 +6,15 @@ import reducer from "./reducer";
 
 import { Provider } from "react-redux";
 
+import App from "./App";
+
 const store = createStore(reducer);
 console.log(store);
+// storeの更新が確認されたときに呼ばれる関数
 store.subscribe(() => {
   console.log(store.getState());
 });
 
-const App = () => <h2>App</h2>;
 render(
   <Provider store={store}>
     <App />
